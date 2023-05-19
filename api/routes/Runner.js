@@ -45,7 +45,7 @@ router.get('/runner/:runnerId', async (req, res) => {
 });
 router.delete('/runner/:runnerId', async (req, res) => {
     try {
-        const deletedRunner = await Runner.deleteOne({ runnerId: req.params.id });
+        const deletedRunner = await Runner.deleteOne({ runnerId: req.params.runnerId });
         if (deletedRunner.deletedCount === 0) {
             return res.status(404).json({ error: "Runner not found" });
         }
