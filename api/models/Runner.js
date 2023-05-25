@@ -18,9 +18,18 @@ const runnerSchema = new mongoose.Schema({
     endTime: {
         type: Date,
     },
+    duration: {
+        type: String,
+
+    },
+    speed: {
+        type: Number,
+
+    },
     numberOfLaps: {
         type: Number,
-    }
+    },
+
 });
 const Runner = mongoose.model('Runner', runnerSchema);
 const runnerValidationSchema = Joi.object({
@@ -28,6 +37,8 @@ const runnerValidationSchema = Joi.object({
     radius: Joi.number().required(),
     startTime: Joi.date().required(),
     endTime: Joi.date().required(),
+    speed: Joi.number().required(),
+    duration: Joi.string().required(),
     numberOfLaps: Joi.number().required()
 });
 module.exports = {

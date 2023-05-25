@@ -14,7 +14,6 @@ app.use(userRoutes);
 app.use(runnerRoutes);
 app.use(adminRoutes);
 
-
 connectDB();
 
 const server = app.listen(PORT, () => {
